@@ -6,7 +6,7 @@ target 'Auth0Quickstart' do
   use_frameworks!
 
   # Pods for Auth0Quickstart
-  pod "Auth0", :git => 'https://github.com/auth0/Auth0.swift.git'
+  pod 'Auth0', '~> 1.0'
 
   target 'Auth0QuickstartTests' do
     inherit! :search_paths

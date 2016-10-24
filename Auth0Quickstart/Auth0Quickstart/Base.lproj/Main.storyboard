@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Tap to Login with Auth0"/>
                                 <connections>
-                                    <action selector="Pipeline2AuthPKCEClickedWithSender:" destination="dkx-z0-nzr" eventType="touchDown" id="XZq-fr-dHM"/>
+                                    <action selector="pipeline2AuthPKCEClickedWithSender:" destination="dkx-z0-nzr" eventType="touchDown" id="5gN-qW-kFf"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="access token: " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5aL-fe-Bde">

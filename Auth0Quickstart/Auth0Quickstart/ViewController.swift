@@ -25,44 +25,36 @@ class ViewController: UIViewController {
 
     
     
-    @IBAction func Pipeline2AuthPKCEClicked( sender: AnyObject? ) {
+    @IBAction func pipeline2AuthPKCEClicked(sender: AnyObject?) {
         
-        let params: [String: String] = [
+        let params = [
             "audience":"http://todoapi2.api",
-            "scope":"openid profile email read:todo offline_access",
-            "response_type":"code",
+            "scope":"openid profile email read:todo offline_access"
             ]
         
         Auth0
             .webAuth()
             .parameters(params)
-            .start(authCallback);
-        
+            .start( { result in
+                switch result {
+                    case .success(let credentials):
+                        print("accessToken: \(credentials.accessToken)")
+                        print("idToken: \(credentials.idToken)")
+                        print("refreshToken: \(credentials.refreshToken)")
+                        print("tokenType: \(credentials.tokenType)")
+            
+                        DispatchQueue.main.async {
+                            // here you have the access token, id token, and (optionally) refresh token available to your app
+                            self.accessTokenText.text=credentials.accessToken
+                            self.idTokenText.text=credentials.idToken
+                            self.refreshTokenText.text = credentials.refreshToken
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            });
     }
     
-    func authCallback(result:Result<Credentials>) {
-        print("In callback...")
-        
-        print(result)
-        
-        switch result {
-        case .success(let credentials):
-            print("accessToken: \(credentials.accessToken)")
-            print("idToken: \(credentials.idToken)")
-            print("refreshToken: \(credentials.refreshToken)")
-            print("tokenType: \(credentials.tokenType)")
-            
-            DispatchQueue.main.async {
-                // here you have the access token, id token, and (optionally) refresh token available to your app
-                self.accessTokenText.text=credentials.accessToken
-                self.idTokenText.text=credentials.idToken
-                self.refreshTokenText.text = credentials.refreshToken
-            }
-        case .failure(let error):
-            print(error)
-        }
-        
-    }
     
     @IBOutlet weak var refreshTokenText: UITextView!
     @IBOutlet weak var accessTokenText: UITextView!
