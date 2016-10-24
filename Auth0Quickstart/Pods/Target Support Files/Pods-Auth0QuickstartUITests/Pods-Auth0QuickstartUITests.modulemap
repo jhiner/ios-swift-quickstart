@@ -1,0 +1,6 @@
+framework module Pods_Auth0QuickstartUITests {
+  umbrella header "Pods-Auth0QuickstartUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

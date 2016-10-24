@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Auth0Quickstart' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Auth0Quickstart
+  pod "Auth0", :git => 'https://github.com/auth0/Auth0.swift.git'
+
+  target 'Auth0QuickstartTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Auth0QuickstartUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

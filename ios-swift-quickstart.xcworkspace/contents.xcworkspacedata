@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Auth0Quickstart/Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Auth0Quickstart/Auth0Quickstart.xcodeproj">
+   </FileRef>
+</Workspace>

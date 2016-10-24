@@ -1,0 +1,6 @@
+framework module Pods_Auth0Quickstart {
+  umbrella header "Pods-Auth0Quickstart-umbrella.h"
+
+  export *
+  module * { export * }
+}
